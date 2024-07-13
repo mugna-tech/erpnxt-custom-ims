@@ -1,7 +1,7 @@
 {
  "charts": [],
- "content": "[{\"id\":\"ifijGpUKgq\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Inventory Management Sytem</span>\",\"col\":12}},{\"id\":\"tMsrXDNyC7\",\"type\":\"card\",\"data\":{\"card_name\":\"Users\",\"col\":4}},{\"id\":\"6DjM_povll\",\"type\":\"card\",\"data\":{\"card_name\":\"System\",\"col\":4}}]",
- "creation": "2024-07-12 00:16:41.968878",
+ "content": "[{\"id\":\"NX6UdN-yyT\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Inventory Management System</span>\",\"col\":12}},{\"id\":\"x0jpYJnqYG\",\"type\":\"card\",\"data\":{\"card_name\":\"Users\",\"col\":4}},{\"id\":\"v8d8pWWWYF\",\"type\":\"card\",\"data\":{\"card_name\":\"Inventory\",\"col\":4}}]",
+ "creation": "2024-07-14 03:33:10.242356",
  "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
@@ -11,12 +11,31 @@
  "idx": 0,
  "indicator_color": "green",
  "is_hidden": 0,
- "label": "Inventory Management Sytem",
+ "label": "Inventory Management System",
  "links": [
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "System",
+   "label": "Users",
+   "link_count": 1,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "IMS User",
+   "link_count": 0,
+   "link_to": "IMS User",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Inventory",
    "link_count": 1,
    "link_type": "DocType",
    "onboard": 0,
@@ -31,42 +50,19 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Users",
-   "link_count": 1,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Users",
-   "link_count": 0,
-   "link_to": "IMS User",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
   }
  ],
- "modified": "2024-07-12 07:28:39.338630",
+ "modified": "2024-07-14 03:37:10.061436",
  "modified_by": "Administrator",
  "module": "Inventory Management System",
- "name": "Inventory Management Sytem",
+ "name": "Inventory Management System",
  "number_cards": [],
  "owner": "Administrator",
  "parent_page": "",
  "public": 1,
  "quick_lists": [],
- "roles": [
-  {
-   "role": "Inventory Manager"
-  }
- ],
- "sequence_id": 2.0,
+ "roles": [],
+ "sequence_id": 1.0,
  "shortcuts": [],
- "title": "Inventory Management Sytem"
+ "title": "Inventory Management System"
 }
