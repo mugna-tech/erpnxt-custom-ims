@@ -24,4 +24,4 @@ jobs:
           script: |
             cd ims
             git pull origin develop
-            docker-compose exec backend bench update --apps ims --pull --patch
+            docker compose exec backend bench update --apps ims --pull --patch
