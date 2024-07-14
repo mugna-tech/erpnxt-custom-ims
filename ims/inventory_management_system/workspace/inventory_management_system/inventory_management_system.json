@@ -1,7 +1,7 @@
 {
  "charts": [],
- "content": "[{\"id\":\"NX6UdN-yyT\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Inventory Management System</span>\",\"col\":12}},{\"id\":\"x0jpYJnqYG\",\"type\":\"card\",\"data\":{\"card_name\":\"Users\",\"col\":4}},{\"id\":\"v8d8pWWWYF\",\"type\":\"card\",\"data\":{\"card_name\":\"Inventory\",\"col\":4}}]",
- "creation": "2024-07-14 03:33:10.242356",
+ "content": "[{\"id\":\"Rn5IdTYUut\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Inventory Management System</span>\",\"col\":12}},{\"id\":\"rF2t_dXRuP\",\"type\":\"card\",\"data\":{\"card_name\":\"Inventory\",\"col\":4}},{\"id\":\"TPbLiS1LwH\",\"type\":\"card\",\"data\":{\"card_name\":\"Users\",\"col\":4}}]",
+ "creation": "2024-07-14 03:56:03.946145",
  "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
@@ -25,7 +25,7 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "IMS User",
+   "label": "User",
    "link_count": 0,
    "link_to": "IMS User",
    "link_type": "DocType",
@@ -52,7 +52,7 @@
    "type": "Link"
   }
  ],
- "modified": "2024-07-14 03:37:10.061436",
+ "modified": "2024-07-14 18:59:15.465734",
  "modified_by": "Administrator",
  "module": "Inventory Management System",
  "name": "Inventory Management System",
@@ -61,8 +61,12 @@
  "parent_page": "",
  "public": 1,
  "quick_lists": [],
- "roles": [],
- "sequence_id": 1.0,
+ "roles": [
+  {
+   "role": "Inventory Manager"
+  }
+ ],
+ "sequence_id": 2.0,
  "shortcuts": [],
  "title": "Inventory Management System"
 }
