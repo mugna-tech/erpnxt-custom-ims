@@ -24,5 +24,4 @@ jobs:
           script: |
             cd ims
             git pull origin develop
-            cd ../frappe-bench
             docker compose exec backend bench update --apps ims --pull --patch
