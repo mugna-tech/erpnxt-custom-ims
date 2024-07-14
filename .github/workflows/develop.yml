@@ -22,5 +22,7 @@ jobs:
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd frappe_docker
-            docker compose -f pwd.yml exec backend bench update --apps ims --pull --patch
+            cd ims
+            git pull origin develop
+            cd ../frappe-bench
+            docker compose exec backend bench update --apps ims --pull --patch
