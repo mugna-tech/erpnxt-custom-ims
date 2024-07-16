@@ -7,7 +7,6 @@ services:
       restart_policy:
         condition: on-failure
     volumes:
-      - .:/home/frappe/ims
       - sites:/home/frappe/frappe-bench/sites
       - logs:/home/frappe/frappe-bench/logs
 
