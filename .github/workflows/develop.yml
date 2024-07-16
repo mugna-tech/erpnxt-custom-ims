@@ -21,6 +21,8 @@ jobs:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
+        env:
+          DOCKER_IMAGE: ${{ DOCKER_IMAGE }}
           script: |
             cd ims
             git pull origin develop
