@@ -5,19 +5,18 @@ app_description = "Inventory Management"
 app_email = "hello@mugna.tech"
 app_license = "mit"
 
-
 fixtures = [
-	{"dt": "Module Def", "filters": {"name": "Inventory Management System"}},
-	{"dt": "Role Profile", "filters": {"name": "Inventory"}},
-	{"dt": "Module Profile", "filters": {"name": "Inventory"}},
-	{
-		"dt": "Role",
-		"filters": [
-			["name", "in", ["Inventory User", "Inventory Manager"]],
-		],
-	},
-	# {"dt": "Inventory"},
-	{"dt": "Email Account", "filters": {"name": "Mugna Tech"}},
+    {"dt": "Module Def", "filters": {"name": "Inventory Management System"}},
+    {"dt": "Role Profile", "filters": {"name": "Inventory"}},
+    {"dt": "Module Profile", "filters": {"name": "Inventory"}},
+    {
+        "dt": "Role",
+        "filters": [
+            ["name", "in", ["Inventory User", "Inventory Manager"]],
+        ],
+    },
+    # {"dt": "Inventory"},
+    {"dt": "Email Account", "filters": {"name": "Mugna Tech"}},
 ]
 
 
