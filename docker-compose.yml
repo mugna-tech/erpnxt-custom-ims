@@ -5,11 +5,11 @@ services:
       configurator:
         condition: service_completed_successfully
         required: true
-    image: ${DOCKER_IMAGE}
+    image: erpnext-ims:develop
     networks:
       default: null
     platform: linux/amd64
-    pull_policy: always
+    pull_policy: never
     volumes:
       - type: volume
         source: sites
@@ -44,11 +44,11 @@ services:
       REDIS_CACHE: redis-cache:6379
       REDIS_QUEUE: redis-queue:6379
       SOCKETIO_PORT: "9000"
-    image: ${DOCKER_IMAGE}
+    image: erpnext-ims:develop
     networks:
       default: null
     platform: linux/amd64
-    pull_policy: always
+    pull_policy: never
     volumes:
       - type: volume
         source: sites
@@ -77,7 +77,7 @@ services:
         target: /var/lib/mysql
         volume: {}
   create-site:
-    image: ${DOCKER_IMAGE}
+    image: erpnext-ims:develop
     deploy:
       restart_policy:
         condition: none
@@ -127,11 +127,11 @@ services:
       UPSTREAM_REAL_IP_ADDRESS: 127.0.0.1
       UPSTREAM_REAL_IP_HEADER: X-Forwarded-For
       UPSTREAM_REAL_IP_RECURSIVE: "off"
-    image: ${DOCKER_IMAGE}
+    image: erpnext-ims:develop
     networks:
       default: null
     platform: linux/amd64
-    pull_policy: always
+    pull_policy: never
     ports:
       - "8080:8080"
     volumes:
@@ -149,11 +149,11 @@ services:
       configurator:
         condition: service_completed_successfully
         required: true
-    image: ${DOCKER_IMAGE}
+    image: erpnext-ims:develop
     networks:
       default: null
     platform: linux/amd64
-    pull_policy: always
+    pull_policy: never
     volumes:
       - type: volume
         source: sites
@@ -169,11 +169,11 @@ services:
       configurator:
         condition: service_completed_successfully
         required: true
-    image: ${DOCKER_IMAGE}
+    image: erpnext-ims:develop
     networks:
       default: null
     platform: linux/amd64
-    pull_policy: always
+    pull_policy: never
     volumes:
       - type: volume
         source: sites
@@ -205,11 +205,11 @@ services:
       configurator:
         condition: service_completed_successfully
         required: true
-    image: ${DOCKER_IMAGE}
+    image: erpnext-ims:develop
     networks:
       default: null
     platform: linux/amd64
-    pull_policy: always
+    pull_policy: never
     volumes:
       - type: volume
         source: sites
@@ -223,11 +223,11 @@ services:
       configurator:
         condition: service_completed_successfully
         required: true
-    image: ${DOCKER_IMAGE}
+    image: erpnext-ims:develop
     networks:
       default: null
     platform: linux/amd64
-    pull_policy: always
+    pull_policy: never
     volumes:
       - type: volume
         source: sites
@@ -249,13 +249,13 @@ x-backend-defaults:
   depends_on:
     configurator:
       condition: service_completed_successfully
-  image: ${DOCKER_IMAGE}
-  pull_policy: always
+  image: erpnext-ims:develop
+  pull_policy: never
   volumes:
     - sites:/home/frappe/frappe-bench/sites
 x-customizable-image:
-  image: ${DOCKER_IMAGE}
-  pull_policy: always
+  image: erpnext-ims:develop
+  pull_policy: never
 x-depends-on-configurator:
   depends_on:
     configurator:
