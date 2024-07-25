@@ -17,6 +17,8 @@ fixtures = [
     },
     # {"dt": "Inventory"},
     {"dt": "Email Account", "filters": {"name": "Mugna Tech"}},
+    {"dt": "Custom Field", "filters": {"fieldname": "custom_reason"}},
+    {"dt": "Client Script", "filters": {"name": "toggle-reason-field"}},
 ]
 
 

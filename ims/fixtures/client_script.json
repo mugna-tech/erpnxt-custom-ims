@@ -1,0 +1,13 @@
+[
+  {
+    "docstatus": 0,
+    "doctype": "Client Script",
+    "dt": "Delivery Note",
+    "enabled": 1,
+    "modified": "2024-07-22 06:24:10.434768",
+    "module": null,
+    "name": "toggle-reason-field",
+    "script": "frappe.ui.form.on('Delivery Note', {\n\trefresh(frm) {\n        frm.toggle_display(['custom_reason'], frm.doc.is_return);\n    }\n});",
+    "view": "Form"
+  }
+]
