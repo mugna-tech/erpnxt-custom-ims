@@ -65,8 +65,6 @@ fixtures = [
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
 
-# doctype_js = {"Purchase Order": "scripts/purchase_order.js"}
-
 # Svg Icons
 # ------------------
 # include app icons in desk
@@ -163,9 +161,6 @@ fixtures = [
 # 		"on_trash": "method"
 # 	}
 # }
-doc_events = {
-    "Purchase Order": {"on_update": "ims.scripts.purchase_order.on_update"},
-}
 
 # Scheduled Tasks
 # ---------------
