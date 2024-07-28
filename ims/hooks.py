@@ -17,9 +17,22 @@ fixtures = [
     },
     # {"dt": "Inventory"},
     {"dt": "Email Account", "filters": {"name": "Mugna Tech"}},
-    {"dt": "Workflow", "filters": {"name": "Review"}},
-    {"dt": "Workflow State", "filters": [["name", "in", ["Draft", "For Review"]]]},
-  
+    {"dt": "Workflow", "filters": {"name": "Purchase Order Workflow"}},
+    {"dt": "Workflow Action Master", "filters": {"name": "Review"}},
+    {
+        "dt": "Workflow State",
+        "filters": [
+            [
+                "name",
+                "in",
+                [
+                    "Pending Approval",
+                    "Cancelled",
+                    "For Review",
+                ],
+            ]
+        ],
+    },
     {"dt": "Custom Field", "filters": {"fieldname": "custom_reason"}},
     {"dt": "Client Script", "filters": {"name": "toggle-reason-field"}},
 ]
@@ -51,6 +64,8 @@ fixtures = [
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
+
+# doctype_js = {"Purchase Order": "scripts/purchase_order.js"}
 
 # Svg Icons
 # ------------------
@@ -148,6 +163,9 @@ fixtures = [
 # 		"on_trash": "method"
 # 	}
 # }
+doc_events = {
+    "Purchase Order": {"on_update": "ims.scripts.purchase_order.on_update"},
+}
 
 # Scheduled Tasks
 # ---------------
