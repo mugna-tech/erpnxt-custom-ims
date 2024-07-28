@@ -3,18 +3,27 @@
   "docstatus": 0,
   "doctype": "Workflow State",
   "icon": "",
-  "modified": "2024-07-26 06:10:18.483358",
-  "name": "For Review",
-  "style": "Info",
-  "workflow_state_name": "For Review"
+  "modified": "2024-07-29 04:16:31.525206",
+  "name": "Cancelled",
+  "style": "Danger",
+  "workflow_state_name": "Cancelled"
  },
  {
   "docstatus": 0,
   "doctype": "Workflow State",
   "icon": "",
-  "modified": "2024-07-26 05:46:06.137897",
-  "name": "Draft",
-  "style": "",
-  "workflow_state_name": "Draft"
+  "modified": "2024-07-29 04:17:59.648776",
+  "name": "Pending Approval",
+  "style": "Primary",
+  "workflow_state_name": "Pending Approval"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2024-07-26 06:10:18.483358",
+  "name": "For Review",
+  "style": "Info",
+  "workflow_state_name": "For Review"
  }
 ]
