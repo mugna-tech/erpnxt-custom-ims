@@ -7,18 +7,24 @@ app_license = "mit"
 
 
 fixtures = [
-	{"dt": "Module Def", "filters": {"name": "Inventory Management System"}},
-	{"dt": "Role Profile", "filters": {"name": "Inventory"}},
-	{"dt": "Module Profile", "filters": {"name": "Inventory"}},
-	{
-		"dt": "Role",
-		"filters": [
-			["name", "in", ["Inventory User", "Inventory Manager"]],
-		],
-	},
-	# {"dt": "Inventory"},
-	{"dt": "Email Account", "filters": {"name": "Mugna Tech"}},
+    {"dt": "Module Def", "filters": {"name": "Inventory Management System"}},
+    {"dt": "Role Profile", "filters": {"name": "Inventory"}},
+    {"dt": "Module Profile", "filters": {"name": "Inventory"}},
+    {
+        "dt": "Role",
+        "filters": [
+            ["name", "in", ["Inventory User", "Inventory Manager"]]
+        ],
+    },
+    {"dt": "Email Account", "filters": {"name": "Mugna Tech"}},
+    {
+        "dt": "Stock Entry Type",
+        "filters": [
+            ["name", "in", ["Disposal", "Sales"]]
+        ],
+    },
 ]
+
 
 
 # Includes in <head>
