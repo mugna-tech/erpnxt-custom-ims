@@ -17,9 +17,22 @@ fixtures = [
     },
     # {"dt": "Inventory"},
     {"dt": "Email Account", "filters": {"name": "Mugna Tech"}},
-    {"dt": "Workflow", "filters": {"name": "Review"}},
-    {"dt": "Workflow State", "filters": [["name", "in", ["Draft", "For Review"]]]},
-  
+    {"dt": "Workflow", "filters": {"name": "Purchase Order Workflow"}},
+    {"dt": "Workflow Action Master", "filters": {"name": "Review"}},
+    {
+        "dt": "Workflow State",
+        "filters": [
+            [
+                "name",
+                "in",
+                [
+                    "Pending Approval",
+                    "Cancelled",
+                    "For Review",
+                ],
+            ]
+        ],
+    },
     {"dt": "Custom Field", "filters": {"fieldname": "custom_reason"}},
     {"dt": "Client Script", "filters": {"name": "toggle-reason-field"}},
 ]
