@@ -20,7 +20,7 @@ fixtures = [
     {
         "dt": "Stock Entry Type",
         "filters": [
-            ["name", "in", ["Disposal", "Sales"]]
+            ["name", "in", ["Disposal"]]
         ],
     },
 ]
