@@ -1,6 +1,15 @@
 {
- "charts": [],
- "content": "[{\"id\":\"Rn5IdTYUut\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Inventory Management System</span>\",\"col\":12}},{\"id\":\"rF2t_dXRuP\",\"type\":\"card\",\"data\":{\"card_name\":\"Inventory\",\"col\":4}},{\"id\":\"TPbLiS1LwH\",\"type\":\"card\",\"data\":{\"card_name\":\"Users\",\"col\":4}}]",
+ "charts": [
+  {
+   "chart_name": "Stock Flows",
+   "label": "Stock Ledger"
+  },
+  {
+   "chart_name": "Warehouse wise Stock Value",
+   "label": "Warehouse Stock Value"
+  }
+ ],
+ "content": "[{\"id\":\"Rn5IdTYUut\",\"type\":\"header\",\"data\":{\"text\":\"<span style=\\\"font-size: 24px;\\\"><b>Inventory Dashboard</b></span>\",\"col\":12}},{\"id\":\"flDe2xYuTK\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Stock Value\",\"col\":4}},{\"id\":\"fh_MrEgYfa\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Active Items\",\"col\":4}},{\"id\":\"i3HrEahcQe\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total No. of Warehouses\",\"col\":4}},{\"id\":\"488J-ViRqf\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Warehouse Stock Value\",\"col\":6}},{\"id\":\"65mmSwsNyy\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Stock Ledger\",\"col\":6}},{\"id\":\"ENwJPgmhyI\",\"type\":\"paragraph\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Quick Access</b></span>\",\"col\":12}},{\"id\":\"-s4fBlplbn\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Stock Disposal\",\"col\":4}},{\"id\":\"iwEIzQUX6C\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Transfer\",\"col\":4}},{\"id\":\"HIdeWnIk3a\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Sales\",\"col\":4}},{\"id\":\"pzNIdS2tKI\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Items\",\"col\":4}},{\"id\":\"0848XkKHNd\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Stock Entry\",\"col\":4}},{\"id\":\"yrhUiP5lrC\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Users\",\"col\":4}},{\"id\":\"RBdDET8JBY\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Warehouse\",\"col\":4}},{\"id\":\"RAj4Wvd5Um\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales\",\"col\":4}},{\"id\":\"W0C3waD1D8\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Supplier\",\"col\":4}},{\"id\":\"kDpm6fd5_G\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Purchase Order\",\"col\":4}}]",
  "creation": "2024-07-14 03:56:03.946145",
  "custom_blocks": [],
  "docstatus": 0,
@@ -12,51 +21,37 @@
  "indicator_color": "green",
  "is_hidden": 0,
  "label": "Inventory Management System",
- "links": [
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Users",
-   "link_count": 1,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "User",
-   "link_count": 0,
-   "link_to": "IMS User",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Inventory",
-   "link_count": 1,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Inventory",
-   "link_count": 0,
-   "link_to": "Inventory",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  }
- ],
- "modified": "2024-07-14 18:59:15.465734",
+ "links": [],
+ "modified": "2024-07-29 08:03:13.372690",
  "modified_by": "Administrator",
  "module": "Inventory Management System",
  "name": "Inventory Management System",
- "number_cards": [],
+ "number_cards": [
+  {
+   "label": "Stock Disposal",
+   "number_card_name": "Stock Disposal"
+  },
+  {
+   "label": "Transfer",
+   "number_card_name": "Transfer"
+  },
+  {
+   "label": "Total Active Items",
+   "number_card_name": "Total Active Items"
+  },
+  {
+   "label": "Total Stock Value",
+   "number_card_name": "Total Stock Value"
+  },
+  {
+   "label": "Total No. of Warehouses",
+   "number_card_name": "Total Warehouses"
+  },
+  {
+   "label": "Sales",
+   "number_card_name": "Sales"
+  }
+ ],
  "owner": "Administrator",
  "parent_page": "",
  "public": 1,
@@ -66,7 +61,64 @@
    "role": "Inventory Manager"
   }
  ],
- "sequence_id": 2.0,
- "shortcuts": [],
+ "sequence_id": 1.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Sales",
+   "link_to": "Sales Order",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Items",
+   "link_to": "Item",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Stock Entry",
+   "link_to": "Stock Entry",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Supplier",
+   "link_to": "Supplier",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Users",
+   "link_to": "IMS User",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Warehouse",
+   "link_to": "Warehouse",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Purchase Order",
+   "link_to": "Purchase Order",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
  "title": "Inventory Management System"
 }
