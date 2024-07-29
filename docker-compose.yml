@@ -1,0 +1,262 @@
+name: frappe_docker
+services:
+  backend:
+    depends_on:
+      configurator:
+        condition: service_completed_successfully
+        required: true
+    image: erpnext-ims:develop
+    networks:
+      default: null
+    platform: linux/amd64
+    pull_policy: never
+    volumes:
+      - type: volume
+        source: sites
+        target: /home/frappe/frappe-bench/sites
+        volume: {}
+  configurator:
+    command:
+      - |
+        ls -1 apps > sites/apps.txt;
+        bench set-config -g db_host $$DB_HOST;
+        bench set-config -gp db_port $$DB_PORT;
+        bench set-config -g redis_cache "redis://$$REDIS_CACHE";
+        bench set-config -g redis_queue "redis://$$REDIS_QUEUE";
+        bench set-config -g redis_socketio "redis://$$REDIS_QUEUE";
+        bench set-config -gp socketio_port $$SOCKETIO_PORT;
+    depends_on:
+      db:
+        condition: service_healthy
+        required: true
+      redis-cache:
+        condition: service_started
+        required: true
+      redis-queue:
+        condition: service_started
+        required: true
+    entrypoint:
+      - bash
+      - -c
+    environment:
+      DB_HOST: db
+      DB_PORT: "3306"
+      REDIS_CACHE: redis-cache:6379
+      REDIS_QUEUE: redis-queue:6379
+      SOCKETIO_PORT: "9000"
+    image: erpnext-ims:develop
+    networks:
+      default: null
+    platform: linux/amd64
+    pull_policy: never
+    volumes:
+      - type: volume
+        source: sites
+        target: /home/frappe/frappe-bench/sites
+        volume: {}
+  db:
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+      - --skip-character-set-client-handshake
+      - --skip-innodb-read-only-compressed
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - mysqladmin ping -h localhost --password=admin
+      interval: 1s
+      retries: 15
+    image: mariadb:10.6
+    networks:
+      default: null
+    volumes:
+      - type: volume
+        source: db-data
+        target: /var/lib/mysql
+        volume: {}
+  create-site:
+    image: erpnext-ims:develop
+    deploy:
+      restart_policy:
+        condition: none
+    volumes:
+      - type: volume
+        source: sites
+        target: /home/frappe/frappe-bench/sites
+        volume: {}
+    entrypoint:
+      - bash
+      - -c
+    command:
+      - >
+        wait-for-it -t 120 db:3306;
+        wait-for-it -t 120 redis-cache:6379;
+        wait-for-it -t 120 redis-queue:6379;
+        export start=`date +%s`;
+        until [[ -n `grep -hs ^ sites/common_site_config.json | jq -r ".db_host // empty"` ]] && \
+          [[ -n `grep -hs ^ sites/common_site_config.json | jq -r ".redis_cache // empty"` ]] && \
+          [[ -n `grep -hs ^ sites/common_site_config.json | jq -r ".redis_queue // empty"` ]];
+        do
+          echo "Waiting for sites/common_site_config.json to be created";
+          sleep 5;
+          if (( `date +%s`-start > 120 )); then
+            echo "could not find sites/common_site_config.json with required keys";
+            exit 1
+          fi
+        done;
+        echo "sites/common_site_config.json found";
+        bench new-site --no-mariadb-socket --admin-password=admin --db-root-password=admin --install-app erpnext --install-app ims --set-default frontend;
+  frontend:
+    command:
+      - nginx-entrypoint.sh
+    depends_on:
+      backend:
+        condition: service_started
+        required: true
+      websocket:
+        condition: service_started
+        required: true
+    environment:
+      BACKEND: backend:8000
+      CLIENT_MAX_BODY_SIZE: 50m
+      FRAPPE_SITE_NAME_HEADER: frontend
+      PROXY_READ_TIMEOUT: "120"
+      SOCKETIO: websocket:9000
+      UPSTREAM_REAL_IP_ADDRESS: 127.0.0.1
+      UPSTREAM_REAL_IP_HEADER: X-Forwarded-For
+      UPSTREAM_REAL_IP_RECURSIVE: "off"
+    image: erpnext-ims:develop
+    networks:
+      default: null
+    platform: linux/amd64
+    pull_policy: never
+    ports:
+      - "8080:8080"
+    volumes:
+      - type: volume
+        source: sites
+        target: /home/frappe/frappe-bench/sites
+        volume: {}
+  queue-long:
+    command:
+      - bench
+      - worker
+      - --queue
+      - long,default,short
+    depends_on:
+      configurator:
+        condition: service_completed_successfully
+        required: true
+    image: erpnext-ims:develop
+    networks:
+      default: null
+    platform: linux/amd64
+    pull_policy: never
+    volumes:
+      - type: volume
+        source: sites
+        target: /home/frappe/frappe-bench/sites
+        volume: {}
+  queue-short:
+    command:
+      - bench
+      - worker
+      - --queue
+      - short,default
+    depends_on:
+      configurator:
+        condition: service_completed_successfully
+        required: true
+    image: erpnext-ims:develop
+    networks:
+      default: null
+    platform: linux/amd64
+    pull_policy: never
+    volumes:
+      - type: volume
+        source: sites
+        target: /home/frappe/frappe-bench/sites
+        volume: {}
+  redis-cache:
+    image: redis:6.2-alpine
+    networks:
+      default: null
+    volumes:
+      - type: volume
+        source: redis-cache-data
+        target: /data
+        volume: {}
+  redis-queue:
+    image: redis:6.2-alpine
+    networks:
+      default: null
+    volumes:
+      - type: volume
+        source: redis-queue-data
+        target: /data
+        volume: {}
+  scheduler:
+    command:
+      - bench
+      - schedule
+    depends_on:
+      configurator:
+        condition: service_completed_successfully
+        required: true
+    image: erpnext-ims:develop
+    networks:
+      default: null
+    platform: linux/amd64
+    pull_policy: never
+    volumes:
+      - type: volume
+        source: sites
+        target: /home/frappe/frappe-bench/sites
+        volume: {}
+  websocket:
+    command:
+      - node
+      - /home/frappe/frappe-bench/apps/frappe/socketio.js
+    depends_on:
+      configurator:
+        condition: service_completed_successfully
+        required: true
+    image: erpnext-ims:develop
+    networks:
+      default: null
+    platform: linux/amd64
+    pull_policy: never
+    volumes:
+      - type: volume
+        source: sites
+        target: /home/frappe/frappe-bench/sites
+        volume: {}
+networks:
+  default:
+    name: frappe_docker_default
+volumes:
+  db-data:
+    name: frappe_docker_db-data
+  redis-cache-data:
+    name: frappe_docker_redis-cache-data
+  redis-queue-data:
+    name: frappe_docker_redis-queue-data
+  sites:
+    name: frappe_docker_sites
+x-backend-defaults:
+  depends_on:
+    configurator:
+      condition: service_completed_successfully
+  image: erpnext-ims:develop
+  pull_policy: never
+  volumes:
+    - sites:/home/frappe/frappe-bench/sites
+x-customizable-image:
+  image: erpnext-ims:develop
+  pull_policy: never
+x-depends-on-configurator:
+  depends_on:
+    configurator:
+      condition: service_completed_successfully

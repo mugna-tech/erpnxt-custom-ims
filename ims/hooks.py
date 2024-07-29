@@ -5,7 +5,6 @@ app_description = "Inventory Management"
 app_email = "hello@mugna.tech"
 app_license = "mit"
 
-
 fixtures = [
     {"dt": "Module Def", "filters": {"name": "Inventory Management System"}},
     {"dt": "Role Profile", "filters": {"name": "Inventory"}},
@@ -23,6 +22,25 @@ fixtures = [
             ["name", "in", ["Disposal"]]
         ],
     },
+    # {"dt": "Inventory"},
+    {"dt": "Workflow", "filters": {"name": "Purchase Order Workflow"}},
+    {"dt": "Workflow Action Master", "filters": {"name": "Review"}},
+    {
+        "dt": "Workflow State",
+        "filters": [
+            [
+                "name",
+                "in",
+                [
+                    "Pending Approval",
+                    "Cancelled",
+                    "For Review",
+                ],
+            ]
+        ],
+    },
+    {"dt": "Custom Field", "filters": {"fieldname": "custom_reason"}},
+    {"dt": "Client Script", "filters": {"name": "toggle-reason-field"}},
 ]
 
 
@@ -212,6 +230,7 @@ fixtures = [
 
 # User Data Protection
 # --------------------
+
 
 # user_data_fields = [
 # 	{

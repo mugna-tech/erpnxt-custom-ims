@@ -40,6 +40,40 @@ This app can use GitHub Actions for CI. The following workflows are configured:
 - CI: Installs this app and runs unit tests on every push to `develop` branch.
 - Linters: Runs [Frappe Semgrep Rules](https://github.com/frappe/semgrep-rules) and [pip-audit](https://pypi.org/project/pip-audit/) on every pull request.
 
+### Docker Building Image
+
+Refer to example `apps.json`
+
+```bash
+export APPS_JSON_BASE64=$(base64 -w 0 /path/to/apps.json)
+
+docker build \
+  --build-arg=APPS_JSON_BASE64=$APPS_JSON_BASE64 \
+  --tag=<aws_ecr_url> \
+  --file=images/custom/Containerfile .
+```
+
+#### Push the image to ECR
+
+> make sure to login to ECR before pushing the image with `aws configure`
+> refer to [AWS ECR push guide](https://docs.aws.amazon.com/AmazonECR/latest/userguide/docker-push-ecr-image.html)
+
+#### Pull the image from ECR
+
+> make sure to login to ECR before pushing the image with `aws configure`
+> refer to [AWS ECR pull guide](https://docs.aws.amazon.com/AmazonECR/latest/userguide/docker-pull-ecr-image.html)
+
+### Docker Setup
+
+```bash
+export DOCKER_IMAGE=<aws_ecr_url>
+docker compose up --build
+```
+
 ### License
 
 mit
+
+```
+
+```
