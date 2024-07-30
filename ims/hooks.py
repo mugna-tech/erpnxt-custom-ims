@@ -12,11 +12,17 @@ fixtures = [
     {
         "dt": "Role",
         "filters": [
-            ["name", "in", ["Inventory User", "Inventory Manager"]],
+            ["name", "in", ["Inventory User", "Inventory Manager"]]
+        ],
+    },
+    {"dt": "Email Account", "filters": {"name": "Mugna Tech"}},
+    {
+        "dt": "Stock Entry Type",
+        "filters": [
+            ["name", "in", ["Disposal"]]
         ],
     },
     # {"dt": "Inventory"},
-    {"dt": "Email Account", "filters": {"name": "Mugna Tech"}},
     {"dt": "Workflow", "filters": {"name": "Purchase Order Workflow"}},
     {"dt": "Workflow Action Master", "filters": {"name": "Review"}},
     {
@@ -36,6 +42,7 @@ fixtures = [
     {"dt": "Custom Field", "filters": {"fieldname": "custom_reason"}},
     {"dt": "Client Script", "filters": {"name": "toggle-reason-field"}},
 ]
+
 
 
 # Includes in <head>
@@ -223,6 +230,7 @@ fixtures = [
 
 # User Data Protection
 # --------------------
+
 
 # user_data_fields = [
 # 	{
