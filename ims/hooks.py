@@ -11,16 +11,12 @@ fixtures = [
     {"dt": "Module Profile", "filters": {"name": "Inventory"}},
     {
         "dt": "Role",
-        "filters": [
-            ["name", "in", ["Inventory User", "Inventory Manager"]]
-        ],
+        "filters": [["name", "in", ["Inventory User", "Inventory Manager"]]],
     },
     {"dt": "Email Account", "filters": {"name": "Mugna Tech"}},
     {
         "dt": "Stock Entry Type",
-        "filters": [
-            ["name", "in", ["Disposal"]]
-        ],
+        "filters": [["name", "in", ["Disposal"]]],
     },
     # {"dt": "Inventory"},
     {"dt": "Workflow", "filters": {"name": "Purchase Order Workflow"}},
@@ -39,10 +35,11 @@ fixtures = [
             ]
         ],
     },
-    {"dt": "Custom Field", "filters": {"fieldname": "custom_reason"}},
-    {"dt": "Client Script", "filters": {"name": "toggle-reason-field"}},
+    {
+        "dt": "Custom Field",
+        "filters": [["dt", "in", ["Delivery Note", "Sales Invoice"]]],
+    },
 ]
-
 
 
 # Includes in <head>
@@ -71,6 +68,12 @@ fixtures = [
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
+
+doctype_js = {
+    "Sales Invoice": "scripts/sales_invoice.js",
+    "Delivery Note": "scripts/delivery_note.js",
+}
+
 
 # Svg Icons
 # ------------------
