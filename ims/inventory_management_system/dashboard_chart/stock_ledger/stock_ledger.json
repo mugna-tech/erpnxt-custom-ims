@@ -1,0 +1,42 @@
+{
+ "based_on": "",
+ "chart_name": "Stock Ledger",
+ "chart_type": "Report",
+ "creation": "2024-07-22 12:26:17.883568",
+ "docstatus": 0,
+ "doctype": "Dashboard Chart",
+ "document_type": "",
+ "dynamic_filters_json": "{}",
+ "filters_json": "{\"company\":\"Mugna IMS\",\"from_date\":\"2024-06-22\",\"to_date\":\"2024-07-22\",\"valuation_field_type\":\"Currency\",\"segregate_serial_batch_bundle\":0}",
+ "group_by_type": "Count",
+ "idx": 0,
+ "is_public": 1,
+ "is_standard": 1,
+ "modified": "2024-07-22 12:26:28.078406",
+ "modified_by": "Administrator",
+ "module": "Inventory Management System",
+ "name": "Stock Ledger",
+ "number_of_groups": 0,
+ "owner": "Administrator",
+ "parent_document_type": "",
+ "report_name": "Stock Ledger",
+ "roles": [],
+ "source": "",
+ "time_interval": "Yearly",
+ "timeseries": 0,
+ "timespan": "Last Year",
+ "type": "Bar",
+ "use_report_chart": 0,
+ "value_based_on": "",
+ "x_field": "warehouse",
+ "y_axis": [
+  {
+   "color": "#4463F0",
+   "y_field": "in_qty"
+  },
+  {
+   "color": "#f01616",
+   "y_field": "out_qty"
+  }
+ ]
+}
