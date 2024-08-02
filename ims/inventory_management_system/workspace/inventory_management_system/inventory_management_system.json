@@ -17,7 +17,7 @@
    "label": "Warehouse Stock Value"
   }
  ],
- "content": "[{\"id\":\"Rn5IdTYUut\",\"type\":\"header\",\"data\":{\"text\":\"<span style=\\\"font-size: 24px;\\\"><b>Inventory Dashboard</b></span>\",\"col\":12}},{\"id\":\"flDe2xYuTK\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Stock Value\",\"col\":3}},{\"id\":\"eQ9Qoh4H0S\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Stocks\",\"col\":3}},{\"id\":\"fh_MrEgYfa\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Active Items\",\"col\":3}},{\"id\":\"i3HrEahcQe\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total No. of Warehouses\",\"col\":3}},{\"id\":\"488J-ViRqf\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Warehouse Stock Value\",\"col\":6}},{\"id\":\"T7gXGBb_Rd\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Stocks per Warehouse\",\"col\":6}},{\"id\":\"65mmSwsNyy\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Stock Ledger\",\"col\":6}},{\"id\":\"CmqMsfku37\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Item-wise Annual Sales\",\"col\":6}},{\"id\":\"ENwJPgmhyI\",\"type\":\"paragraph\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Quick Access</b></span>\",\"col\":12}},{\"id\":\"-s4fBlplbn\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Stock Disposal\",\"col\":4}},{\"id\":\"iwEIzQUX6C\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Transfer\",\"col\":4}},{\"id\":\"HIdeWnIk3a\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Sales\",\"col\":4}},{\"id\":\"pzNIdS2tKI\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Items\",\"col\":4}},{\"id\":\"0848XkKHNd\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Stock Entry\",\"col\":4}},{\"id\":\"yrhUiP5lrC\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Users\",\"col\":4}},{\"id\":\"RBdDET8JBY\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Warehouse\",\"col\":4}},{\"id\":\"RAj4Wvd5Um\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales\",\"col\":4}},{\"id\":\"W0C3waD1D8\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Supplier\",\"col\":4}},{\"id\":\"kDpm6fd5_G\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Purchase Order\",\"col\":4}}]",
+ "content": "[{\"id\":\"Rn5IdTYUut\",\"type\":\"header\",\"data\":{\"text\":\"<span style=\\\"font-size: 24px;\\\"><b>Inventory Dashboard</b></span>\",\"col\":12}},{\"id\":\"flDe2xYuTK\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Stock Value\",\"col\":3}},{\"id\":\"eQ9Qoh4H0S\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Stocks\",\"col\":3}},{\"id\":\"fh_MrEgYfa\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Active Items\",\"col\":3}},{\"id\":\"i3HrEahcQe\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total No. of Warehouses\",\"col\":3}},{\"id\":\"488J-ViRqf\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Warehouse Stock Value\",\"col\":6}},{\"id\":\"T7gXGBb_Rd\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Stocks per Warehouse\",\"col\":6}},{\"id\":\"65mmSwsNyy\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Stock Ledger\",\"col\":6}},{\"id\":\"CmqMsfku37\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Item-wise Annual Sales\",\"col\":6}},{\"id\":\"ENwJPgmhyI\",\"type\":\"paragraph\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Quick Access</b></span>\",\"col\":12}},{\"id\":\"-s4fBlplbn\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Stock Disposal\",\"col\":3}},{\"id\":\"iwEIzQUX6C\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Transfer\",\"col\":3}},{\"id\":\"HIdeWnIk3a\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Sales\",\"col\":3}},{\"id\":\"_uJAamz4M9\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Returns\",\"col\":3}},{\"id\":\"yrhUiP5lrC\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Users\",\"col\":4}},{\"id\":\"pzNIdS2tKI\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Items\",\"col\":4}},{\"id\":\"0848XkKHNd\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Stock Entry\",\"col\":4}},{\"id\":\"W0C3waD1D8\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Supplier\",\"col\":4}},{\"id\":\"kDpm6fd5_G\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Purchase Order\",\"col\":4}},{\"id\":\"RAj4Wvd5Um\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales\",\"col\":4}},{\"id\":\"RBdDET8JBY\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Warehouse\",\"col\":4}},{\"id\":\"M9UccAambL\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"NT0-H2mTm_\",\"type\":\"card\",\"data\":{\"card_name\":\"Sales and Payment\",\"col\":4}},{\"id\":\"VgDXMkh2Mw\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":4}},{\"id\":\"IAOH2qpRAd\",\"type\":\"card\",\"data\":{\"card_name\":\"Sales Report\",\"col\":4}}]",
  "creation": "2024-07-14 03:56:03.946145",
  "custom_blocks": [],
  "docstatus": 0,
@@ -29,8 +29,176 @@
  "indicator_color": "green",
  "is_hidden": 0,
  "label": "Inventory Management System",
- "links": [],
- "modified": "2024-08-01 07:01:43.328477",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Sales and Payment",
+   "link_count": 4,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Sales Order",
+   "link_count": 0,
+   "link_to": "Sales Order",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Delivery Note",
+   "link_count": 0,
+   "link_to": "Delivery Note",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Sales Invoice",
+   "link_count": 0,
+   "link_to": "Sales Invoice",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Payment Entry",
+   "link_count": 0,
+   "link_to": "Payment Entry",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Reports",
+   "link_count": 6,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Stock Ledger",
+   "link_count": 0,
+   "link_to": "Stock Ledger",
+   "link_type": "Report",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Stock Ageing",
+   "link_count": 0,
+   "link_to": "Stock Ageing",
+   "link_type": "Report",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Item-wise Sales History",
+   "link_count": 0,
+   "link_to": "Item-wise Sales History",
+   "link_type": "Report",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Stock Balance",
+   "link_count": 0,
+   "link_to": "Stock Balance",
+   "link_type": "Report",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Stock Analytics",
+   "link_count": 0,
+   "link_to": "Stock Analytics",
+   "link_type": "Report",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Stock Projected Qty",
+   "link_count": 0,
+   "link_to": "Stock Projected Qty",
+   "link_type": "Report",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Sales Report",
+   "link_count": 4,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Sales Order Analysis",
+   "link_count": 0,
+   "link_to": "Sales Order Analysis",
+   "link_type": "Report",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Sales Invoice Trends",
+   "link_count": 0,
+   "link_to": "Sales Invoice Trends",
+   "link_type": "Report",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Sales Order Analysis",
+   "link_count": 0,
+   "link_to": "Sales Order Analysis",
+   "link_type": "Report",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "General Ledger",
+   "link_count": 0,
+   "link_to": "General Ledger",
+   "link_type": "Report",
+   "onboard": 1,
+   "type": "Link"
+  }
+ ],
+ "modified": "2024-08-02 09:12:52.441194",
  "modified_by": "Administrator",
  "module": "Inventory Management System",
  "name": "Inventory Management System",
@@ -38,6 +206,10 @@
   {
    "label": "Stock Disposal",
    "number_card_name": "Stock Disposal"
+  },
+  {
+   "label": "Returns",
+   "number_card_name": "Returns"
   },
   {
    "label": "Transfer",

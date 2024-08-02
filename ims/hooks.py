@@ -41,6 +41,19 @@ fixtures = [
     },
 ]
 
+portal_menu_items = [
+    {
+        "title": "Inventory Management System",
+        "route": "/inventory-management-system",
+        "role": "Inventory Manager"
+    },
+    {
+        "title": "Inventory Management System",
+        "route": "/inventory-management-system",
+        "role": "Inventory User"
+    }
+]
+
 
 # Includes in <head>
 # ------------------
