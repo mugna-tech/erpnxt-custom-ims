@@ -1,5 +1,6 @@
 import json
 import os
+from functools import reduce
 
 from frappe import (
     _,
@@ -7,6 +8,7 @@ from frappe import (
     get_list,
     log_error,
     sendmail,
+    set_value,
 )
 from frappe.utils import get_url
 from jinja2 import Template
@@ -20,7 +22,7 @@ def after_save(doc, method=None):
 
     bin_items = get_list(
         "Bin",
-        fields=["name", "warehouse", "actual_qty", "item_code"],
+        fields=["name", "warehouse", "actual_qty", "item_code", "notify_stock"],
         filters=[
             [
                 "warehouse",
@@ -38,16 +40,21 @@ def after_save(doc, method=None):
                 [x["stock_threshold"] for x in item_data],
             )
         )
+        for i in filtered:
+            if i["actual_qty"] < i["stock_threshold"]:
+                set_value("Bin", i["name"], "notify_stock", 1)
+            else:
+                set_value("Bin", i["name"], "notify_stock", 0)
 
         data = list(filter(lambda x: x["actual_qty"] < x["stock_threshold"], filtered))
-        print(data)
 
         current_dir = os.path.dirname(__file__)
         template_path = os.path.join(
             current_dir,
             "../inventory_management_system/email_templates/low_in_stock.html",
         )
-        send_email(data, template_path)
+        if len(data) > 0 and 0 in [d["notify_stock"] for d in data]:
+            send_email(data, template_path)
     except Exception as e:
         print("err", e)
         log_error(f"Error sending email: {str(e)}", "Send Email Error")
@@ -64,7 +71,6 @@ def send_email(docs, template_path):
             filters={"role": "Inventory Manager"},
             pluck="email",
         )
-        print(docs)
         message = template.render(
             docs=docs,
             site_url=get_url(),

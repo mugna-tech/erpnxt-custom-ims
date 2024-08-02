@@ -173,7 +173,7 @@ doctype_js = {
 # 	}
 # }
 
-doc_events = {"Stock Ledger Entry": {"on_change": "ims.scripts.stock_threshold.after_save"}}
+doc_events = {"Stock Ledger Entry": {"after_insert": "ims.scripts.stock_threshold.after_save"}}
 
 # Scheduled Tasks
 # ---------------
