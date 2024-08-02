@@ -37,7 +37,7 @@ fixtures = [
     },
     {
         "dt": "Custom Field",
-        "filters": [["dt", "in", ["Delivery Note", "Sales Invoice"]]],
+        "filters": [["dt", "in", ["Delivery Note", "Sales Invoice", "Item"]]],
     },
 ]
 
@@ -72,6 +72,7 @@ fixtures = [
 doctype_js = {
     "Sales Invoice": "scripts/sales_invoice.js",
     "Delivery Note": "scripts/delivery_note.js",
+    "Stock Threshold": "scripts/stock_threshold.js",
 }
 
 
@@ -171,6 +172,8 @@ doctype_js = {
 # 		"on_trash": "method"
 # 	}
 # }
+
+doc_events = {"Stock Ledger Entry": {"on_change": "ims.scripts.stock_threshold.after_save"}}
 
 # Scheduled Tasks
 # ---------------
