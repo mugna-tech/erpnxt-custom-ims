@@ -28,3 +28,4 @@ jobs:
             # WARN: use only on develop; .git must be removed on docker images
             # migrations must be done manually
             docker compose exec backend git -C apps/ims pull
+            docker compose up --build -d
