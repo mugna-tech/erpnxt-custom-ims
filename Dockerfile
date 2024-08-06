@@ -128,7 +128,8 @@ RUN export APP_INSTALL_ARGS="" && \
   /home/frappe/frappe-bench && \
   cd /home/frappe/frappe-bench && \
   echo "{}" > sites/common_site_config.json
-# find apps -mindepth 1 -path "*/.git" | xargs rm -fr # disable this for now
+# WARN: uncomment this on prod & have a different approach in updating apps
+# find apps -mindepth 1 -path "*/.git" | xargs rm -fr
 
 FROM base AS backend
 
