@@ -1,6 +1,7 @@
 name: frappe_docker
 services:
   backend:
+    restart: always
     depends_on:
       configurator:
         condition: service_completed_successfully
@@ -16,6 +17,7 @@ services:
         target: /home/frappe/frappe-bench/sites
         volume: {}
   configurator:
+    restart: always
     command:
       - |
         ls -1 apps > sites/apps.txt;
@@ -55,6 +57,7 @@ services:
         target: /home/frappe/frappe-bench/sites
         volume: {}
   db:
+    restart: always
     command:
       - --character-set-server=utf8mb4
       - --collation-server=utf8mb4_unicode_ci
@@ -77,6 +80,7 @@ services:
         target: /var/lib/mysql
         volume: {}
   create-site:
+    restart: always
     image: erpnext-ims:develop
     deploy:
       restart_policy:
@@ -109,6 +113,7 @@ services:
         echo "sites/common_site_config.json found";
         bench new-site --no-mariadb-socket --admin-password=admin --db-root-password=admin --install-app erpnext --install-app ims --set-default frontend;
   frontend:
+    restart: always
     command:
       - nginx-entrypoint.sh
     depends_on:
@@ -140,6 +145,7 @@ services:
         target: /home/frappe/frappe-bench/sites
         volume: {}
   queue-long:
+    restart: always
     command:
       - bench
       - worker
@@ -160,6 +166,7 @@ services:
         target: /home/frappe/frappe-bench/sites
         volume: {}
   queue-short:
+    restart: always
     command:
       - bench
       - worker
@@ -180,6 +187,7 @@ services:
         target: /home/frappe/frappe-bench/sites
         volume: {}
   redis-cache:
+    restart: always
     image: redis:6.2-alpine
     networks:
       default: null
@@ -189,6 +197,7 @@ services:
         target: /data
         volume: {}
   redis-queue:
+    restart: always
     image: redis:6.2-alpine
     networks:
       default: null
@@ -198,6 +207,7 @@ services:
         target: /data
         volume: {}
   scheduler:
+    restart: always
     command:
       - bench
       - schedule
@@ -216,6 +226,7 @@ services:
         target: /home/frappe/frappe-bench/sites
         volume: {}
   websocket:
+    restart: always
     command:
       - node
       - /home/frappe/frappe-bench/apps/frappe/socketio.js
@@ -246,6 +257,7 @@ volumes:
   sites:
     name: frappe_docker_sites
 x-backend-defaults:
+  restart: always
   depends_on:
     configurator:
       condition: service_completed_successfully
@@ -254,9 +266,11 @@ x-backend-defaults:
   volumes:
     - sites:/home/frappe/frappe-bench/sites
 x-customizable-image:
+  restart: always
   image: erpnext-ims:develop
   pull_policy: never
 x-depends-on-configurator:
+  restart: always
   depends_on:
     configurator:
       condition: service_completed_successfully
