@@ -49,31 +49,13 @@ export APPS_JSON_BASE64=$(base64 -w 0 /path/to/apps.json)
 
 docker build \
   --build-arg=APPS_JSON_BASE64=$APPS_JSON_BASE64 \
-  --tag=<aws_ecr_url> \
-  --file=images/custom/Containerfile .
+  --tag=erpnext-ims:develop \
+  --file=Dockerfile .
 ```
 
-#### Push the image to ECR
-
-> make sure to login to ECR before pushing the image with `aws configure`
-> refer to [AWS ECR push guide](https://docs.aws.amazon.com/AmazonECR/latest/userguide/docker-push-ecr-image.html)
-
-#### Pull the image from ECR
-
-> make sure to login to ECR before pushing the image with `aws configure`
-> refer to [AWS ECR pull guide](https://docs.aws.amazon.com/AmazonECR/latest/userguide/docker-pull-ecr-image.html)
-
-### Docker Setup
+Start the container
 
 ```bash
-export DOCKER_IMAGE=<aws_ecr_url>
-docker compose up --build
-```
-
-### License
-
-mit
-
-```
+docker compose up --build -d
 
 ```
