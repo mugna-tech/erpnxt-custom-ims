@@ -1,0 +1,55 @@
+<div
+	style="
+		font-family: Arial, sans-serif;
+		max-width: 600px;
+		margin: auto;
+		border: 1px solid #dcdcdc;
+		border-radius: 5px;
+		padding: 20px;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	"
+>
+	<h2 style="text-align: center">Low Stock Alert</h2>
+	<p style="font-size: 16px; color: #333">
+		The following item(s) in your inventory are running low on stock
+	</p>
+
+	<table
+		style="
+			width: 100%;
+			border-collapse: collapse;
+			border: 1px solid #ddd;
+			border-radius: 8px;
+			overflow: hidden;
+		"
+	>
+		<thead style="background-color: #f2f2f2">
+			<tr>
+				<th style="text-align: left; padding: 8px; border: 1px solid #ddd">Item Code</th>
+				<th style="text-align: left; padding: 8px; border: 1px solid #ddd">
+					Actual Quantity
+				</th>
+				<th style="text-align: left; padding: 8px; border: 1px solid #ddd">
+					Stock Threshold
+				</th>
+				<th style="text-align: left; padding: 8px; border: 1px solid #ddd">Warehouse</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for doc in docs %}
+			<tr
+				style="background-color: {% if loop.index is even %}#f9f9f9{% else %}#ffffff{% endif %};"
+			>
+				<td style="padding: 8px; border: 1px solid #ddd">{{ doc.item_code }}</td>
+				<td style="padding: 8px; border: 1px solid #ddd">{{ doc.actual_qty }}</td>
+				<td style="padding: 8px; border: 1px solid #ddd">{{ doc.stock_threshold }}</td>
+				<td style="padding: 8px; border: 1px solid #ddd">{{ doc.warehouse }}</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	<p style="font-size: 16px; color: #333">
+		You can access the site through this link:
+		<a href="{{ site_url }}">{{ site_url }}</a>
+	</p>
+</div>

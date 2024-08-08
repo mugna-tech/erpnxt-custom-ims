@@ -1,0 +1,49 @@
+{
+ "actions": [],
+ "autoname": "hash",
+ "creation": "2024-08-01 05:27:17.795607",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "warehouse",
+  "stock_threshold",
+  "item_stock"
+ ],
+ "fields": [
+  {
+   "fieldname": "warehouse",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Warehouse",
+   "options": "Warehouse",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "stock_threshold",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Stock Threshold"
+  },
+  {
+   "fieldname": "item_stock",
+   "fieldtype": "Link",
+   "label": "Item Stock",
+   "options": "Bin"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-08-06 23:44:07.246553",
+ "modified_by": "Administrator",
+ "module": "Inventory Management System",
+ "name": "Stock Threshold",
+ "naming_rule": "Random",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

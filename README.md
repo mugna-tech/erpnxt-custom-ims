@@ -1,3 +1,8 @@
+### Local Installation
+
+- [MacOS](https://github.com/frappe/bench/wiki/Setting-up-a-Mac-for-Frappe-ERPNext-Development)
+- [Ubuntu](https://github.com/D-codE-Hub/Guide-to-Install-Frappe-ERPNext-in-Ubuntu-22.04-LTS)
+
 ### Inventory Management System
 
 Inventory Management
@@ -35,7 +40,22 @@ This app can use GitHub Actions for CI. The following workflows are configured:
 - CI: Installs this app and runs unit tests on every push to `develop` branch.
 - Linters: Runs [Frappe Semgrep Rules](https://github.com/frappe/semgrep-rules) and [pip-audit](https://pypi.org/project/pip-audit/) on every pull request.
 
+### Docker Building Image
 
-### License
+Refer to example `apps.json`
 
-mit
+```bash
+export APPS_JSON_BASE64=$(base64 -w 0 /path/to/apps.json)
+
+docker build \
+  --build-arg=APPS_JSON_BASE64=$APPS_JSON_BASE64 \
+  --tag=erpnext-ims:develop \
+  --file=Dockerfile .
+```
+
+Start the container
+
+```bash
+docker compose up --build -d
+
+```

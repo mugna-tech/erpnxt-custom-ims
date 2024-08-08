@@ -1,0 +1,17 @@
+[
+ {
+  "_assign": null,
+  "_comments": null,
+  "_liked_by": null,
+  "_user_tags": null,
+  "app_name": "ims",
+  "custom": 0,
+  "docstatus": 0,
+  "doctype": "Module Def",
+  "modified": "2024-07-07 16:39:56.147353",
+  "module_name": "Inventory Management System",
+  "name": "Inventory Management System",
+  "package": null,
+  "restrict_to_domain": null
+ }
+]
